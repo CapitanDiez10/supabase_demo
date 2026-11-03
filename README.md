@@ -1,2 +1,7 @@
 # supabase_demo
-supabase
+
+## 1. instalación de las librerías base
+
+´´´´python
+pip install web.py supabase
+´´´´
