@@ -1,8 +1,14 @@
 import os
 from supabase import create_client, Client
 from dotenv import load_dotenv
+import hashlib
+import hmac
+from typing import Any, cast
+import logging
+
 
 load_dotenv()
+logger = logging.getLogger(__name__)
 
 class ModelContactos:
     def __init__(self) -> None:
@@ -12,6 +18,7 @@ class ModelContactos:
                 os.environ.get("SUPABASE_KEY","")
             )
         except Exception as error:
+            logger.error(f"ERROR 100: {str(error)}")
             print(f"ERROR 100:{error.args[0]}")
     def obtenerContactos(self):
         #SELECT * FROM contactos;
