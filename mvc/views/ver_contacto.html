@@ -1,0 +1,19 @@
+$def with (contacto)
+<section class="tarjeta">
+    <h2>Detalle del contacto</h2>
+
+    <img src="/static/fotos/$(contacto.get('foto') or 'default.png')" alt="Foto de $contacto['nombre']" height="150" width="150">
+
+    <dl>
+        <dt>Nombre</dt>
+        <dd>$contacto["nombre"]</dd>
+
+        <dt>Email</dt>
+        <dd>$contacto["email"]</dd>
+
+        <dt>Teléfono</dt>
+        <dd>$contacto["telefono"]</dd>
+    </dl>
+
+    <a href="/lista_contactos">Regresar a la lista de contactos</a>
+</section>

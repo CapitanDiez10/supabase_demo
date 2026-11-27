@@ -1,0 +1,22 @@
+<section class="tarjeta">
+    <h2>Nuevo contacto</h2>
+
+    <!-- enctype es necesario para poder subir archivos -->
+    <form name="contactos" method="POST" action="/insertar_contacto" enctype="multipart/form-data">
+        <label for="nombre">Nombre</label>
+        <input type="text" name="nombre" id="nombre" required>
+
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" required>
+
+        <label for="telefono">Teléfono</label>
+        <input type="tel" name="telefono" id="telefono" required>
+
+        <label for="foto">Foto</label>
+        <input type="file" name="foto" id="foto" accept=".jpg,.jpeg,.png,.webp">
+        <img id="vista_previa" class="vista-previa" alt="Vista previa" hidden>
+
+        <button type="submit" name="insertar" id="insertar">Insertar</button>
+        <button type="button" name="cancelar" id="cancelar" onclick="cancelar()">Cancelar</button>
+    </form>
+</section>

@@ -1,0 +1,23 @@
+$def with (contacto, id_hash)
+<section class="tarjeta">
+    <h2>Actualizar contacto</h2>
+
+    <form name="contacto" method="POST" action="/actualizar_contacto/$id_hash" enctype="multipart/form-data">
+        <label for="nombre">Nombre</label>
+        <input type="text" name="nombre" id="nombre" value="$contacto['nombre']" required>
+
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" value="$contacto['email']" required>
+
+        <label for="telefono">Teléfono</label>
+        <input type="tel" name="telefono" id="telefono" value="$contacto['telefono']" required>
+
+        <label for="foto">Foto (déjala vacía para conservar la actual)</label>
+        <img src="/static/fotos/$(contacto.get('foto') or 'default.png')" alt="Foto actual" height="100" width="100">
+        <input type="file" name="foto" id="foto" accept=".jpg,.jpeg,.png,.webp">
+        <img id="vista_previa" class="vista-previa" alt="Vista previa" hidden>
+
+        <button type="submit" name="actualizar" id="actualizar">Actualizar</button>
+        <button type="button" name="cancelar" id="cancelar" onclick="cancelar()">Cancelar</button>
+    </form>
+</section>

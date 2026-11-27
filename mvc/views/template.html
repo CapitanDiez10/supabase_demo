@@ -1,0 +1,27 @@
+$def with (content)
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Agenda MVC</title>
+        <link rel="stylesheet" href="/static/css/style.css">
+    </head>
+    <body>
+        <header>
+            <h1>Agenda MVC</h1>
+            <nav>
+                <a href="/">Inicio</a>
+                <a href="/lista_contactos">Contactos</a>
+                <a href="/cerrar_sesion">Cerrar sesión</a>
+            </nav>
+        </header>
+        <main>
+            $:content
+        </main>
+        <footer>
+            <p>Aplicación Web Segura de Agenda</p>
+        </footer>
+        <script src="/static/js/script.js"></script>
+    </body>
+</html>

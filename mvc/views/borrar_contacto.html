@@ -1,0 +1,20 @@
+$def with (contacto, id_hash)
+<section class="tarjeta">
+    <h2>Borrar contacto</h2>
+
+    <form name="contacto" method="POST" action="/borrar_contacto/$id_hash" onsubmit="return confirmarBorrado()">
+        <img src="/static/fotos/$(contacto.get('foto') or 'default.png')" alt="Foto de $contacto['nombre']" height="150" width="150">
+
+        <label for="nombre">Nombre</label>
+        <input type="text" name="nombre" id="nombre" value="$contacto['nombre']" readonly>
+
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" value="$contacto['email']" readonly>
+
+        <label for="telefono">Teléfono</label>
+        <input type="tel" name="telefono" id="telefono" value="$contacto['telefono']" readonly>
+
+        <button type="submit" name="borrar" id="borrar">Borrar</button>
+        <button type="button" name="cancelar" id="cancelar" onclick="cancelar()">Cancelar</button>
+    </form>
+</section>
